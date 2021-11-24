@@ -1,0 +1,109 @@
+:root{
+    --bg_color: rgb(48,48,48);
+    --text_color_w: white;
+    --text_color_b: black;
+    --bg_box: black;
+    --bg_box_hover: white;
+    --bg_dot: #bbb;
+    --bg_dot_hover: #717171;
+}
+
+body{
+    background-color: var(--bg_color);
+}
+
+.container{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+img{
+    width: 100%;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: var(--text_color_w);
+    font-weight: bold;
+    font-size: 28px;
+    user-select: none;
+    background-color: var(--bg_box);
+}
+
+.next{
+    right: 0;
+}
+
+.prev:hover, .next:hover{
+    transition: 0.6s;
+    background-color: var(--bg_box_hover);
+    color: var(--text_color_b);
+}
+
+.n_text{
+    color: var(--text_color_w);
+    background-color: var(--bg_box);
+    font-size: 25px;
+    padding: 8px 13px;
+    position: absolute;
+    top: 0;
+}
+
+.i_text{
+    color: var(--text_color_w);
+    background-color: var(--bg_box);
+    width: 100%;
+    position: absolute;
+    font-size: 25px;
+    padding: 8px 0px;
+    text-align: center;
+    bottom: 0;
+}
+
+.dots_box{
+    text-align: center;
+    margin-top: 12px;
+}
+
+.dot{
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    background-color: var(--bg_dot);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active, .dot:hover{
+    transition: 0.6s;
+    background-color: var(--bg_dot_hover);
+}
+
+/* Animação de Fading */
+
+.fade{
+    /* Para a animação funcionar em todos os navegadores */
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    /* Comando padrão para fazer a animação */
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* fazendo animação de fading nos navegadores que suportam este recurso */
+@keyframes fade{
+    from{opacity: 0.4;}
+    to{opacity: 1;}
+}
+/* fazendo animação de fading nos navegadores que trabalham com o webkit */
+@-webkit-keyframes fade{
+    from{opacity: 0.4;}
+    to{opacity: 1;}
+}
